@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "UserRecord",
+  "doc": "This is a sample Avro schema for the entity user",
+  "namespace": "com.producer.dto",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "size",
+      "type": "int"
+    }
+  ]
+}

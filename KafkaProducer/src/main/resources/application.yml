@@ -1,0 +1,28 @@
+server:
+  port: 8087
+
+spring:
+  kafka:
+    # list of kafka brokers
+    bootstrap-servers: "localhost:29092,localhost:39092,localhost:49092"
+    producer:
+      properties:
+        schema:
+          registry:
+            url: "http://127.0.0.1:8081"
+
+init:
+  data: false
+  # total messages to publish for each topic
+  size: 1000
+  # by slice
+  slice : 1
+  waiting:
+    # thread sleep between slices
+    time: 60000
+  string:
+    topic-name: stringTopic
+  json:
+    topic-name: jsonTopic
+  avro:
+    topic-name: avroTopic

@@ -1,0 +1,27 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: KafkaConsumer
+  kafka:
+    bootstrap-servers: "localhost:29092,localhost:39092,localhost:49092"
+    consumer:
+      properties:
+        schema:
+          registry:
+            url: "http://127.0.0.1:8081"
+    properties:
+      auto:
+        register:
+          schemas=true:
+incoming:
+  string:
+    topic-name: stringTopic
+    consumer-group: ${spring.application.name}-string
+  json:
+    topic-name: jsonTopic
+    consumer-group: ${spring.application.name}-json
+  avro:
+    topic-name: avroTopic
+    consumer-group: ${spring.application.name}-avro
